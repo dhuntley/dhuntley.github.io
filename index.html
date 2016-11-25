@@ -12,37 +12,8 @@
 		<!-- Optional theme -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 		<link rel="stylesheet" href="main.css">
-		<script>
-			if (document.documentElement.clientWidth > 800) {
-				// Load the IFrame Player API code asynchronously.
-				var tag = document.createElement('script');
-				tag.src = "https://www.youtube.com/player_api";
-				var firstScriptTag = document.getElementsByTagName('script')[0];
-				firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-				// Replace the 'ytplayer' element with an <iframe> and
-				// YouTube player after the API code downloads.
-				var player;
-				function onYouTubePlayerAPIReady() {
-					player = new YT.Player('ytplayer', {
-						height: '720',
-						width: '1280',
-						playerVars: {
-							autoplay: 1,
-							controls: 0,
-							disablekb: 1,
-							enablejsapi: 1,
-							fs: 0,
-							iv_load_policy: 3,
-							loop: 1,
-							modestbranding: 1,
-							showinfo: 0
-						},
-						videoId: '9LssTi4X8jY'
-					});
-				}
-			}
-		</script>
+		<script src="jquery-3.1.1.min.js"></script>
+		<script src="video.js"></script>
 	</head>
 	<body>
 		<div class="video-container">
@@ -55,9 +26,31 @@
 					<h1 class="panel-title">Secret Santa</h1>
 				</div>
 				<div class="panel-body">
-					Basic panel example
+					<div class="startPanel" style="">
+						<form>
+							<div class="form-group">
+								<label>Enter your SUPER SECRET CODENAME</label>
+								<input id="codename" class="form-control" placeholder=""/>
+							</div>
+							<div class="button-container">
+								<button id="codenameButton" type="button" class="btn btn-default">Go!</button>
+							</div>
+						</form>
+					</div>
+					<div class="confirmationPanel" style="display: none">
+						<h3>Is your name <span class="realName">{}</span>?</h3>
+						<div class="button-container">
+							<button id="confirmationYesButton" type="button" class="btn btn-default">No</button>
+							<button id="confirmationNoButton" type="button" class="btn btn-default">Yes, I promise!</button>
+						</div>
+					</div>
+					<div class="finalPanel" style="display: none">
+						<h3>Okay, thanks <span class="realName">{}</span>!</h3>
+						<h3>You get to but a present for <span class="targetName">{}</span>.</h3>
+					</div>
 				</div>
 			</div>
 		</div>
+		<script src="form.js"></script>
 	</body>
 </html>
