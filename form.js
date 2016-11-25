@@ -17,7 +17,8 @@ $(document).ready(function() {
 			success: function(result) {
 				$(".startPanel").css({display: "none"});
 				$(".confirmationPanel").css({display: "block"});
-				$(".realName").html(result.name);
+				$(".realName").html(result.realName);
+				$(".targetName").htlm(result.targetName);
 			}
 		});
 	});
