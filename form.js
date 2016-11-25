@@ -7,7 +7,7 @@ $(document).ready(function() {
 	});
 
 	$("#codenameButton").on("click", function() {
-		let codename = $("#codename").val().trim().toLowerCase();
+		var codename = $("#codename").val().trim().toLowerCase();
 		$.ajax({
 			url: "https://huntleysecretsanta.herokuapp.com/",
 			data: {
