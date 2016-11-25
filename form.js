@@ -18,7 +18,7 @@ $(document).ready(function() {
 				$(".startPanel").css({display: "none"});
 				$(".confirmationPanel").css({display: "block"});
 				$(".realName").html(result.realName);
-				$(".targetName").htlm(result.targetName);
+				$(".targetName").html(result.targetName);
 			}
 		});
 	});
